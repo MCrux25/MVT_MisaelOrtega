@@ -1,14 +1,17 @@
-<html lang="es-ES"><head> 
-    {%load static%}
+<!DOCTYPE html>
+<html lang="es-MX"><head> 
+    {%load static%} 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Misael">
     <meta name="generator" content="familia">
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico'%}" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="{% static 'css/styles.css'%}" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static '\css\styles.css'%}" />
+    <title>Mi familia</title>    
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico'%}" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link rel="stylesheet" href="{% static '\css\styles.css'%}" />    
     </head>
     <body>
         <!-- Responsive navbar-->
@@ -36,9 +39,9 @@
         <!-- Page content-->
         <div class="container">
             <div class="text-center mt-5">
-                    <h1 style="text-align: center;">Esta es mi familia</h1>
+                    <!--<h1 style="text-align: center;">Esta es mi familia</h1>-->
                     <div class="container">
-                        <h2>Familiares</h2>
+                        <h1>Esta es mi familia</h1>
                         <div class="table-wrapper">
                             <table class="fl-table">
                                 <thead>
@@ -62,6 +65,8 @@
         <!-- Bootstrap core JS-->
         <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
         <!-- Core theme JS-->
-        <script src="{% static 'js/scripts.js'%}"></script>
+            </div>
+        </div>
+        </div>
     </body>
 </html>
