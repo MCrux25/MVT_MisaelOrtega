@@ -43,21 +43,17 @@
                             <table class="fl-table">
                                 <thead>
                                 <tr>
-                                    <th>Nombre</th>
-                                    <th>Número de la suerte</th>
-                                    <th>Fecha de nacimiento</th>
+                                    <th style="text-align: justify;">Nombre</th>
+                                    <th style="text-align: justify;">Número de la suerte</th>
+                                    <th style="text-align: justify;">Fecha de nacimiento</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 {%for x in familiar%} <!--Este ciclo for hace referencia a los elementos en el modelo familiar-->
                                 <tr>
-                                    <td>{{x.nombre}}</td>
-                                </tr>
-                                <tr>
-                                    <td>{{x.suerte}}</td>
-                                </tr>
-                                <tr>
-                                    <td>{{x.nacimiento}}</td>
+                                    <td style="text-align: justify;">{{x.nombre}}</td>
+                                    <td style="text-align: center;">{{x.suerte}}</td>
+                                    <td style="text-align: justify;">{{x.nacimiento}}</td>
                                 </tr>
                                 {% endfor %}
                                 <tbody>
