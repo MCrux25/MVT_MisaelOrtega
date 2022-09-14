@@ -6,6 +6,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <link href="{% static 'css/styles.css'%}" rel="stylesheet" />
+    <link href="{% static 'css/miestilo2.css'%}" rel="stylesheet" />
     <title>Homie</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico'%}" />
@@ -29,40 +30,32 @@
             </div>
         </nav>
         <!-- Page content-->
-        <div class="container">
+        <div class="container-fluid">
             <div class="text-center mt-5">
                     <h1 style="text-align: center;">Homie, esta es tu casa</h1>
                     <div>
                         <h2>Esta es mi familia</h2>
-                        <p style="text-align: justify;">
                         <br>
-                        Así se ve aquella que, como diría Toreto, es lo más importante
-                        <br><br>
-                        <img src="{% static 'assets/meme_familia1.JPEG'%}" class="img-fluid" alt="fondo" type="image"><br>
-                        *****insertar foto de la familia*****
-                        <br><br>
-                        <!--<img src="/demo.jpg" alt="description" width="100" height="48" />-->
-                        
-                        Bueno, pero no es toda, en esta foto también falta mamá, porque se separó de mi padre afortunadamente, hace algunos años, y Meche (mi carnalita). Como vemos en la foto, de derecha a izquierda están:
-                        <br><br>
-                        Lalo (mi carnalito), Eduardo alias Chucho (el jefe) y Angelina (la jefa del jefe).
-                        <br><br>
-                        *****insertar foto de mamá*****
-                        <!--<img src="/demo.jpg" alt="description" width="100" height="48" />-->
-                        <br><br>
-                        Ella es Carmen, mi jefa.
-                        <br><br>
-                        </p>
-                        </div>
+                            <p style="text-align: justify;">
+                                <img src="{% static 'assets/meme_familia1.JPEG'%}" class="estandar" alt="fondo" type="image"><br><br>
+                                Así se ve aquella que, como diría Toreto, es lo más importante
+                                <br><br>
+                                <img src="{% static 'assets/foto1.JPG'%}" class="estandar" alt="fondo" type="image">
+                                Bueno, pero no es toda, en esta foto también falta mamá, porque se separó de mi padre afortunadamente, hace algunos años, y Meche (mi carnalita). 
+                                <br><br>
+                                Como vemos en la foto, de derecha a izquierda están:
+                                <br><br>
+                                Lalo (mi carnalito), Eduardo alias Chucho (el jefe), yoni, y Angelina (la jefa del jefe).
+                                <br><br>
+                            </p>
+                    </div>
                     <div>
                         <h2>Este soy yo</h2>
                         <p style="text-align: justify;">
                             <br>
                             Hola extraño, soy {{name}}, tengo {{age}} y soy {{zodiac}}.
                             <br><br>
-                            ****insertar foto mía****
-                            <!--<img src="/demo.jpg" alt="description" width="100" height="48" />-->
-                        </p>
+                            <img src="{% static 'assets/foto2.JPG'%}" class="estandar" alt="fondo" type="image"><br><br>                        </p>
                     </div>
             </div>
         </div>
