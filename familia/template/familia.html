@@ -1,78 +1,39 @@
-<!DOCTYPE html>
-<html lang="es-MX"><head> 
-    {%load static%} 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Misael">
-    <meta name="generator" content="familia">
-    <link rel="stylesheet" href="{% static 'css/styles.css'%}" />
-    <title>Mi familia</title>    
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico'%}" />
-    <!-- Core theme CSS (includes Bootstrap)-->   
-    </head>
-    <body>
-        <!-- Responsive navbar-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container">
-                <a class="navbar-brand" href="http://127.0.0.1:8000/">La Familia</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/">Homie</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/familia">Familia</a></li>
-                        <!--<li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>-->
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!-- Page content-->
-        <div class="container">
-            <div class="text-center mt-5">
-                    <div class="container">
-                        <h1>Esta es mi familia</h1>
-                        <table class="redTable">
-                            <thead>
-                            <tr>
-                            <th>Nombre</th>
-                            <th>Número de la suerte</th>
-                            <th>Fecha de nacimiento</th>
-                            </tr>
-                            </thead>
-                            <!--<tfoot>
-                            <tr>
-                            <td colspan="3">
-                            <div class="links"><a href="#">&laquo;</a> <a class="active" href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#">&raquo;</a></div>
-                            </td>
-                            </tr>
-                            </tfoot>-->
-                            <tbody>
-                                <tbody>
-                                    {%for x in familiar%} <!--Este ciclo for hace referencia a los elementos en el modelo familiar-->
-                                    <tr>
-                                        <td>{{x.nombre}}</td>
-                                        <td>{{x.suerte}}</td>
-                                        <td>{{x.nacimiento}}</td>
-                                    </tr>
-                                    {% endfor %}
-                                    <tbody>
-                            </tr>
-                        </table>    
-                    </div>
-        <!-- Bootstrap core JS-->
-        <script href="{% static 'js/bootstrap.bundle.min.js'%}"></script>
-        <!-- Core theme JS-->
-            </div>
-        </div>
-        </div>
-    </body>
-</html>
+{% extends "jefe.html" %}
+
+{% load static %}
+
+{% block contenido %}
+<div align="center">
+    <h1 style="text-align: center ;">Esta es mi familia</h1>
+    <table class="redTable">
+        <thead>
+        <tr>
+        <th>Nombre</th>
+        <th>Número de la suerte</th>
+        <th>Fecha de nacimiento</th>
+        </tr>
+        </thead>
+        <!--<tfoot>
+        <tr>
+        <td colspan="3">
+        <div class="links"><a href="#">&laquo;</a> <a class="active" href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#">&raquo;</a></div>
+        </td>
+        </tr>
+        </tfoot>-->
+        <tbody>
+            <tbody>
+                {%for x in familiar%} <!--Este ciclo for hace referencia a los elementos en el modelo familiar-->
+                <tr>
+                    <td>{{x.nombre}}</td>
+                    <td>{{x.suerte}}</td>
+                    <td>{{x.nacimiento}}</td>
+                </tr>
+                {% endfor %}
+                <tbody>
+        </tr>
+    </table>    
+    <!-- Bootstrap core JS-->
+    <script href="{% static 'js/bootstrap.bundle.min.js'%}"></script>
+<!-- Core theme JS-->
+</div>
+{% endblock %}

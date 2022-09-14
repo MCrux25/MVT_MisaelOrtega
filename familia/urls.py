@@ -2,5 +2,8 @@ from django.urls import path
 from familia.views import *
 
 urlpatterns = [
-    path('', familia),
+    path('', casa),
+    path('familia/', familia),
+    path('mascotas/', mascotas),
+    path('otra/', otra),
 ]

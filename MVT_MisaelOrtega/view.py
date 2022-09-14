@@ -9,3 +9,5 @@ def homie(self):
     documento = plantilla.render(data)
     return HttpResponse (documento)
 
+
+
