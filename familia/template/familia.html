@@ -6,12 +6,11 @@
     <meta name="description" content="">
     <meta name="author" content="Misael">
     <meta name="generator" content="familia">
-    <link rel="stylesheet" href="{% static '\css\styles.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/styles.css'%}" />
     <title>Mi familia</title>    
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico'%}" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link rel="stylesheet" href="{% static '\css\styles.css'%}" />    
+    <!-- Core theme CSS (includes Bootstrap)-->   
     </head>
     <body>
         <!-- Responsive navbar-->
@@ -39,31 +38,38 @@
         <!-- Page content-->
         <div class="container">
             <div class="text-center mt-5">
-                    <!--<h1 style="text-align: center;">Esta es mi familia</h1>-->
                     <div class="container">
                         <h1>Esta es mi familia</h1>
-                        <div class="table-wrapper">
-                            <table class="fl-table">
-                                <thead>
-                                <tr>
-                                    <th style="text-align: justify;">Nombre</th>
-                                    <th style="text-align: justify;">Número de la suerte</th>
-                                    <th style="text-align: justify;">Fecha de nacimiento</th>
-                                </tr>
-                                </thead>
+                        <table class="redTable">
+                            <thead>
+                            <tr>
+                            <th>Nombre</th>
+                            <th>Número de la suerte</th>
+                            <th>Fecha de nacimiento</th>
+                            </tr>
+                            </thead>
+                            <!--<tfoot>
+                            <tr>
+                            <td colspan="3">
+                            <div class="links"><a href="#">&laquo;</a> <a class="active" href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#">&raquo;</a></div>
+                            </td>
+                            </tr>
+                            </tfoot>-->
+                            <tbody>
                                 <tbody>
-                                {%for x in familiar%} <!--Este ciclo for hace referencia a los elementos en el modelo familiar-->
-                                <tr>
-                                    <td style="text-align: justify;">{{x.nombre}}</td>
-                                    <td style="text-align: center;">{{x.suerte}}</td>
-                                    <td style="text-align: justify;">{{x.nacimiento}}</td>
-                                </tr>
-                                {% endfor %}
-                                <tbody>
-                            </table>
-                        </div>
+                                    {%for x in familiar%} <!--Este ciclo for hace referencia a los elementos en el modelo familiar-->
+                                    <tr>
+                                        <td>{{x.nombre}}</td>
+                                        <td>{{x.suerte}}</td>
+                                        <td>{{x.nacimiento}}</td>
+                                    </tr>
+                                    {% endfor %}
+                                    <tbody>
+                            </tr>
+                        </table>    
+                    </div>
         <!-- Bootstrap core JS-->
-        <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
+        <script href="{% static 'js/bootstrap.bundle.min.js'%}"></script>
         <!-- Core theme JS-->
             </div>
         </div>

@@ -11286,3 +11286,63 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+
+/*Table*/
+
+table.redTable {
+  font-family: "Lucida Console", Monaco, monospace;
+  border: 5px solid #BF51C9;
+  background-color: #8396A5;
+  width: 100%;
+  height: 200px;
+  text-align: center;
+  border-collapse: collapse;
+}
+table.redTable td, table.redTable th {
+  border: 0px solid #AAAAAA;
+  padding: 3px 0px;
+}
+table.redTable tbody td {
+  font-size: 13px;
+  color: #000000;
+}
+table.redTable tr:nth-child(even) {
+  background: #DDD964;
+}
+table.redTable thead {
+  background: #1D272D;
+  background: -moz-linear-gradient(top, #555d61 0%, #333c42 66%, #1D272D 100%);
+  background: -webkit-linear-gradient(top, #555d61 0%, #333c42 66%, #1D272D 100%);
+  background: linear-gradient(to bottom, #555d61 0%, #333c42 66%, #1D272D 100%);
+  border-bottom: 3px solid #444444;
+}
+table.redTable thead th {
+  font-size: 17px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: center;
+  border-left: 0px solid #A40808;
+}
+table.redTable thead th:first-child {
+  border-left: none;
+}
+
+table.redTable tfoot {
+  font-size: 13px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background: #A40808;
+}
+table.redTable tfoot td {
+  font-size: 13px;
+}
+table.redTable tfoot .links {
+  text-align: right;
+}
+table.redTable tfoot .links a{
+  display: inline-block;
+  background: #FFFFFF;
+  color: #A40808;
+  padding: 2px 8px;
+  border-radius: 5px;
+}

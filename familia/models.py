@@ -6,4 +6,4 @@ class familiar(models.Model):
     nacimiento = models.DateField()
 
     def __str__(self):
-        return self.nombre, self.suerte
+        return self.nombre
