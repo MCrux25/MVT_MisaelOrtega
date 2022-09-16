@@ -3,22 +3,17 @@
 {% load static %}
 
 {% block contenido %}
+<h2 align="center">¿Cómo imaginas otra ciudad?</h2>
 <div class="otro">
-    
+    <form method="POST"> {% csrf_token %}
         <div class="pregunta">
-            <p>¿Cómo imaginas otra ciudad?</p>
-            <form method="POST"> {% csrf_token %}
             <input type="text" name="suenio" placeholder="¿Cómo sueñas la ciudad?">
             <input type="text" name="pseudonimo" placeholder="¿Cómo quieres ser nombrado?">
             <input type="text" name="fecha" placeholder="¿En qué fecha te gustaría estar?">
-            <button type="submit">Registrar</button>
-            </form>
-            
-                    
-                        
-                    
-            
+            <div>
+                <button type="submit" class="centrado">Registrar sueño</button>
+            </div>
         </div>
-    
+    </form>
 </div>
 {% endblock %}
