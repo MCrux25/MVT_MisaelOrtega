@@ -4,18 +4,21 @@
 
 {% block contenido %}
 <div class="otro">
-    <form method="POST"> {% csrf_token %}
+    
         <div class="pregunta">
             <p>¿Cómo imaginas otra ciudad?</p>
-            <input type="text" placeholder="¿Cómo sueñas la ciudad?">
-            <input type="text" placeholder="¿Cómo quieres ser nombrado?">
-            <input type="text" placeholder="¿En qué fecha te gustaría estar?">
-                <div>
-                    <button type="submit">
-                        Registrar
-                    </button>
-                </div>
+            <form method="POST"> {% csrf_token %}
+            <input type="text" name="suenio" placeholder="¿Cómo sueñas la ciudad?">
+            <input type="text" name="pseudonimo" placeholder="¿Cómo quieres ser nombrado?">
+            <input type="text" name="fecha" placeholder="¿En qué fecha te gustaría estar?">
+            <button type="submit">Registrar</button>
+            </form>
+            
+                    
+                        
+                    
+            
         </div>
-    </form>
+    
 </div>
 {% endblock %}

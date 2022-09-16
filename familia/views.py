@@ -14,7 +14,7 @@ def mascotas(request):
 
 def otra(request):
     if request.method == "POST":
-        sueño = sueños (sueño = request.POST['sueño'], pseudonimo = request.POST['pseudonimo'], fecha = request.POST['fecha'])
-        sueño.save()
-        return render (request, 'casa.html', {'sueño' : sueño })
+        suenio = suenios (suenio = request.POST['suenio'], pseudonimo = request.POST['pseudonimo'], fecha = request.POST['fecha'])
+        suenio.save()
+        return render (request, 'casa.html')
     return render (request, 'otra.html')
