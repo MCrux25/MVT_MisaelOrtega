@@ -7,3 +7,8 @@ class familiar(models.Model):
 
     def __str__(self):
         return self.nombre
+
+class sueños(models.Model):
+    sueño = models.CharField(max_length=100)
+    pseudonimo = models.CharField(max_length=30)
+    fecha = models.DateField()

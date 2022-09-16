@@ -1,6 +1,6 @@
 from django.shortcuts import render
+from familia.models import *
 
-from familia.models import familiar
 
 def familia (request):
     integrantes = familiar.objects.all()
@@ -13,4 +13,8 @@ def mascotas(request):
     return render (request,'mascotas.html')
 
 def otra(request):
-    return render (request,'otra.html')
+    if request.method == "POST":
+        sueño = sueños (sueño = request.POST['sueño'], pseudonimo = request.POST['pseudonimo'], fecha = request.POST['fecha'])
+        sueño.save()
+        return render (request, 'casa.html', {'sueño' : sueño })
+    return render (request, 'otra.html')

@@ -4,9 +4,18 @@
 
 {% block contenido %}
 <div class="otro">
-    <form class="pregunta">
-        <p>¿Cómo imaginas otra ciudad?</p>
-        <input type="text" placeholder="¿Crees que abandonaremos la ciudad?" width="60%">
+    <form method="POST"> {% csrf_token %}
+        <div class="pregunta">
+            <p>¿Cómo imaginas otra ciudad?</p>
+            <input type="text" placeholder="¿Cómo sueñas la ciudad?">
+            <input type="text" placeholder="¿Cómo quieres ser nombrado?">
+            <input type="text" placeholder="¿En qué fecha te gustaría estar?">
+                <div>
+                    <button type="submit">
+                        Registrar
+                    </button>
+                </div>
+        </div>
     </form>
 </div>
 {% endblock %}
