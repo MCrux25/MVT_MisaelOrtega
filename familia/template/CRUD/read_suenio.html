@@ -1,0 +1,22 @@
+{% extends "jefe.html" %}
+
+{% load static %}
+
+{% block contenido %}
+<div align="center">
+    <table class="redTable">
+        <thead>
+            {%for zuenio in suenios%}
+            <tr>
+            
+            <th>{{zuenio}} <a class="btn btn-warning">Edit</a> <a href="/familia/delete_suenio/{{zuenio.pseudonimo}}" class="btn btn-danger">Delete</a></th>
+            
+            </tr>
+            {% endfor %}
+        </thead>
+    </table>    
+<a class="btn btn-success" href="/familia/create_suenio">+ Agregar Sueño</a>
+</div>
+{% endblock %}
+
+

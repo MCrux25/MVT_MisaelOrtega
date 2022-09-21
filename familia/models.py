@@ -14,4 +14,4 @@ class suenios(models.Model):
     fecha = models.DateField()
 
     def __str__(self):
-        return self.pseudonimo
+        return f' pseudonimo:{self.pseudonimo}, suenio:{self.suenio}, fecha:{self.fecha}'

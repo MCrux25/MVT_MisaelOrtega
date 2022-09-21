@@ -55,7 +55,7 @@ ROOT_URLCONF = 'MVT_MisaelOrtega.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [f'{BASE_DIR}/MVT_MisaelOrtega/template',f'{BASE_DIR}/familia/template'],
+        'DIRS': [f'{BASE_DIR}/MVT_MisaelOrtega/template',f'{BASE_DIR}/familia/template', f'{BASE_DIR}/familia/template/CRUD'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
