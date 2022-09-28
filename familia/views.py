@@ -113,7 +113,7 @@ def changepass(request):
         if form.is_valid():
             user = form.save()
             update_session_auth_hash(request, user)
-            return render(request, 'home.html')
+            return render(request, 'index.html')
     else:
         #form = PasswordChangeForm(request.user)
         form = ChangePasswordForm(user = request.user)
