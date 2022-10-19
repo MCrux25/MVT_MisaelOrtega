@@ -1,22 +1,20 @@
 {% extends "jefe.html" %}
 
-<title>Casa</title>
-
 {%load static%} 
 
-
+{% block title %} Login {% endblock %}
 {%block contenido%}
-<div class=container align="center">
-    <form method="POST">
+
+<div style="position: relative; top: 80px;" class=container align="center">
+    <form method="POST" align="justify">
         {% csrf_token %}
 
         {{ form.as_p }}
-        <button class= "btn btn-success" type="submit">Iniciar sesión</button>
+        <br>
+        <button class= "btn btn-success" type="submit" align="center">Iniciar sesión</button>
+        <br>
+        <br>
+        <a class="btn btn-success" style="text-decoration: sandybrown; color: rgba(0, 0, 0, 0.907)" href="/suenios/registro">Registrar usuario</a>
     </form>
-</div>
-<div class=container align="center">
-    <br>
-    <a class="btn btn-success" style="text-decoration: sandybrown; color: rgba(0, 0, 0, 0.907)" href="/suenios/registro">Registrar usuario</a>
-</div>
 
 {% endblock %}
