@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from familia.models import *
+from suenios.models import *
 
 from django.contrib.auth.forms import *
 from django.contrib.auth import login, logout, authenticate, update_session_auth_hash
@@ -7,26 +7,6 @@ from .forms import *
 from django.contrib.auth.decorators import login_required
 
 from django.contrib.auth.models import User
-
-
-# @login_required
-# def familia (request):
-#     integrantes = familiar.objects.all()
-#     return render(request, 'familia.html', {'familiar': integrantes})
-
-# def casa(request):
-#     return render (request,'jefe.html')
-
-# def mascotas(request):
-#     return render (request,'mascotas.html')
-
-
-# def otra(request):
-#     if request.method == "POST":
-#         zuenio = suenios (suenio = request.POST['suenio'], pseudonimo = request.POST['pseudonimo'], fecha = request.POST['fecha'])
-#         zuenio.save()
-#         return render (request, 'jefe.html')
-#     return render (request, 'otra.html')
 
 @login_required
 def create_suenio(request):
@@ -97,7 +77,7 @@ def registro(request):
         if form.is_valid():
             #username = form.cleaned_data['username']
             form.save()
-            return redirect ("/familia/login")
+            return redirect ("/suenios/login")
         else:
             return render(request, "registro.html",{'form':form})
     #form = UserCreationForm()

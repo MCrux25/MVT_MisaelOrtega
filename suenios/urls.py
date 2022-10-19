@@ -1,5 +1,5 @@
 from django.urls import path
-from familia.views import *
+from suenios.views import *
 from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
