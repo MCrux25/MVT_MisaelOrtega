@@ -22,14 +22,14 @@
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Homie</a></li>
                         <!--<li class="nav-item"><a class="nav-link" href="suenios"suenios</a></li>-->
                         <!--<li class="nav-item"><a class="nav-link" href="suenios/mascotas">Mascotas</a></li>-->                        
-                        <li class="nav-item"><a class="nav-link" href="suenios/perfil/">Perfil</a></li>
-                        <li class="nav-item"><a class="nav-link" href="suenios/create_suenio/">Registrar sueño</a></li>
-                        <li class="nav-item"><a class="nav-link" href="suenios/read_suenio/">Sueños</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/suenios/perfil/">Perfil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/suenios/create_suenio/">Registrar sueño</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/suenios/read_suenio/">Sueños</a></li>
                         <!--<li class="nav-item"><a class="nav-link" href="suenios/registro/">Registrar usuario</a></li>-->
                         {%if not request.user.is_authenticated %}
-                        <li class="nav-item"><a class="nav-link" href="suenios/login">Login</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/suenios/login">Login</a></li>
                         {% endif %}
-                        <li class="nav-item"><a class="nav-link" href="suenios/logout/">Salir</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/suenios/logout/">Salir</a></li>
                     </ul>
                 </div>
             </div>
