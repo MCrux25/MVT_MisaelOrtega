@@ -1,0 +1,22 @@
+{% extends "jefe.html" %}
+
+<title>Casa</title>
+
+{%load static%} 
+
+
+{%block contenido%}
+<div class=container align="center">
+    <form method="POST">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+        <button class= "btn btn-success" type="submit">Iniciar sesión</button>
+    </form>
+</div>
+<div class=container align="center">
+    <br>
+    <a class="btn btn-success" style="text-decoration: sandybrown; color: rgba(0, 0, 0, 0.907)" href="/familia/registro">Registrar usuario</a>
+</div>
+
+{% endblock %}

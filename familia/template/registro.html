@@ -1,0 +1,13 @@
+{% extends "jefe.html" %}
+{%load static%} 
+
+{%block contenido%}
+<div class="otro" align="justified">
+    <form method="POST">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+        <button type="submit">Registrar usuario</button>
+    </form>
+</div>
+{% endblock %}

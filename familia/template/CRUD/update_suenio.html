@@ -1,0 +1,16 @@
+
+{% extends "jefe.html" %}
+{%load static%} 
+
+{%block contenido%}
+
+<h1>Editar sueño</h1>
+
+<div class="otro">
+    <form method="POST"> {% csrf_token %}
+        {{ form.as_table }}
+    </form>
+    <button type="submit" class="btn btn-success">Registrar cambios</button>
+</div> 
+
+{% endblock %}

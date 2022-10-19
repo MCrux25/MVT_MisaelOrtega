@@ -1,13 +1,11 @@
 from django.http import HttpResponse
-from django.template import loader
+from django.shortcuts import render
 
 
 
-def homie(self):
+def homie(request):
     data = {'name': 'Julia', 'age': '28', 'zodiac':'piscis'}
-    plantilla = loader.get_template('index.html')
-    documento = plantilla.render(data)
-    return HttpResponse (documento)
+    return render (request, "index.html", data)
 
 
 

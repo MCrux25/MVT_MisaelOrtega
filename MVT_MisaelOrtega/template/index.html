@@ -1,65 +1,32 @@
-<!DOCTYPE html>
-<html lang="es-MX"><head> 
-    {%load static%} 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <link href="{% static 'css/styles.css'%}" rel="stylesheet" />
-    <link href="{% static 'css/miestilo2.css'%}" rel="stylesheet" />
-    <title>Homie</title>
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico'%}" />
-    </head>
-    <body>
-        <!-- Responsive navbar-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container">
-                <a class="navbar-brand" href="http://127.0.0.1:8000/">La Familia</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/">Homie</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/familia/familia">Familia</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/familia/mascotas">Mascotas</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/familia/otra">Otra</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!-- Page content-->
-        <div class="container-fluid">
-            <div class="text-center mt-5">
-                    <h1 style="text-align: center;">Homie, esta es tu casa</h1>
-                    <div>
-                        <h2>Esta es mi familia</h2>
-                        <br>
-                            <p style="text-align: justify;">
-                                <img src="{% static 'assets/meme_familia1.JPEG'%}" class="estandar" alt="fondo" type="image"><br><br>
-                                Así se ve aquella que, como diría Toreto, es lo más importante
-                                <br><br>
-                                <img src="{% static 'assets/foto1.JPG'%}" class="estandar" alt="fondo" type="image">
-                                Bueno, pero no es toda, en esta foto también falta mamá, porque se separó de mi padre afortunadamente, hace algunos años, y Meche (mi carnalita). 
-                                <br><br>
-                                Como vemos en la foto, de derecha a izquierda están:
-                                <br><br>
-                                Lalo (mi carnalito), Eduardo alias Chucho (el jefe), yoni, y Angelina (la jefa del jefe).
-                                <br><br>
-                            </p>
-                    </div>
-                    <div>
-                        <h2>Este soy yo</h2>
-                        <p style="text-align: justify;">
-                            <br>
-                            Hola extraño, soy {{name}}, tengo {{age}} y soy {{zodiac}}.
-                            <br><br>
-                            <img src="{% static 'assets/foto2.JPG'%}" class="estandar" alt="fondo" type="image"><br><br>                        </p>
-                    </div>
-            </div>
-        </div>
-        <!-- Bootstrap core JS-->
-        <script href="{% static 'js/bootstrap.bundle.min.js'%}"></script>
-    </body>
-</html>
+{% extends "jefe.html" %}
+
+{% load static %}
+
+{% block contenido %}
+<h1 style="text-align: center;">Homie, esta es tu casa</h1>
+<div class="container">
+    <h2>Esta es mi familia</h2>
+    <br>
+        <p style="text-align: justify;">
+            <img src="{% static 'assets/meme_familia1.JPEG'%}" class="estandar" alt="fondo" type="image"><br><br>
+            Así se ve aquella que, como diría Toreto, es lo más importante
+            <br><br>
+            <img src="{% static 'assets/foto1.JPG'%}" class="estandar" alt="fondo" type="image"><br><br>
+            Bueno, pero no es toda, en esta foto también falta mamá, porque se separó de mi padre afortunadamente, hace algunos años, y Meche (mi carnalita). 
+            <br><br>
+            Como vemos en la foto, de derecha a izquierda están:
+            <br><br>
+            Lalo (mi carnalito), Eduardo alias Chucho (el jefe), yoni, y Angelina (la jefa del jefe).
+            <br><br>
+        </p>
+</div>
+<div class="container">
+    <h2>Este soy yo</h2>
+    <p style="text-align: justify;">
+        <br>
+        Hola extraño, soy {{name}}, tengo {{age}} y soy {{zodiac}}.
+        <br><br>
+        <img src="{% static 'assets/foto2.JPG'%}" class="estandar" alt="fondo" type="image"><br><br>                        
+    </p>
+</div>
+{% endblock %}
