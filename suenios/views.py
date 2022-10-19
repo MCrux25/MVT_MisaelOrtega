@@ -62,7 +62,7 @@ def login_request(request):
 
             if user is not None:
                 login(request,user)
-                return render (request, "index.html")
+                return render (request, "acerca.html")
             else:
                 return render (request, "login.html", {'form':form})
         else:
@@ -96,9 +96,9 @@ def editar_perfil(request):
             user_basic_info.first_name = form.cleaned_data.get('first_name')
             user_basic_info.last_name = form.cleaned_data.get('last_name')
             user_basic_info.save()
-            return render (request, "index.html")
+            return render (request, "acerca.html")
         else:
-            return render(request, "index.html",{'form':form})
+            return render(request, "acerca.html",{'form':form})
     else:
         form = UserEditForm(initial= {'email':usuario.email, 'username': usuario.username, 'first_name': usuario.first_name, 'last_name': usuario.last_name}) 
         return render(request, "editarperfil.html",{'form':form, 'usuario':usuario})
@@ -113,7 +113,7 @@ def changepass(request):
         if form.is_valid():
             user = form.save()
             update_session_auth_hash(request, user)
-            return render(request, 'index.html')
+            return render(request, 'acerca.html')
     else:
         #form = PasswordChangeForm(request.user)
         form = ChangePasswordForm(user = request.user)

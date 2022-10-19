@@ -14,7 +14,7 @@ urlpatterns = [
     path('suenio/', suenioView),
     path('login/', login_request),
     path('registro/', registro),
-    path('logout/', LogoutView.as_view (template_name = "index.html"), name = "Logout"),
+    path('logout/', LogoutView.as_view (template_name = "acerca.html"), name = "Logout"),
     path('perfil/', perfilView),
     path('perfil/editarPerfil/', editar_perfil),
     path('perfil/changepass/', changepass),

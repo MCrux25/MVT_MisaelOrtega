@@ -4,9 +4,18 @@
 
 {% block contenido %}
 <h1 style="text-align: center;">Homie, aquí unos datos míos</h1>
-<div class="container">
-    <h2>Esta es mi familia</h2>
-    <br>
+    <div class="container">
+        <h2>Este soy yo</h2>
+        <p style="text-align: justify;">
+            <br>
+            Hola extraño, soy {{name}}, tengo {{age}} y soy {{zodiac}}.
+            <br><br>
+            <img src="{% static 'assets/foto2.JPG'%}" class="estandar" alt="fondo" type="image"><br><br>                        
+        </p>
+    </div>
+    <div class="container">
+        <h2>Esta es mi familia</h2>
+        <br>
         <p style="text-align: justify;">
             <img src="{% static 'assets/meme_familia1.JPEG'%}" class="estandar" alt="fondo" type="image"><br><br>
             Así se ve aquella que, como diría Toreto, es lo más importante
@@ -19,14 +28,5 @@
             Lalo (mi carnalito), Eduardo alias Chucho (el jefe), yoni, y Angelina (la jefa del jefe).
             <br><br>
         </p>
-</div>
-<div class="container">
-    <h2>Este soy yo</h2>
-    <p style="text-align: justify;">
-        <br>
-        Hola extraño, soy {{name}}, tengo {{age}} y soy {{zodiac}}.
-        <br><br>
-        <img src="{% static 'assets/foto2.JPG'%}" class="estandar" alt="fondo" type="image"><br><br>                        
-    </p>
-</div>
+    </div>
 {% endblock %}
