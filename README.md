@@ -1,4 +1,4 @@
-# Registro_de_sueños
+# Registro de sueños 
 Aplicación para registrar y compartir tus sueños.
 Autor: Misael Ortega Cruz
 
