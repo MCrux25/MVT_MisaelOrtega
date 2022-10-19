@@ -1,0 +1,18 @@
+
+{% extends "jefe.html" %}
+{%load static%} 
+
+{%block contenido%}
+
+<h1>Editar perfil</h1>
+<h2>{{ usuario }}</h2>
+
+<form method="POST"> {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <input type="submit" value="Editar perfil">
+</form>
+<a href="/suenios/perfil/changepass/">Cambiar contraseña</a>
+
+{% endblock %}
