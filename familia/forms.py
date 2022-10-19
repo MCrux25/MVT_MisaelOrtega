@@ -34,3 +34,9 @@ class ChangePasswordForm(PasswordChangeForm):
         model = User
         fields = ['old_password', 'new_password1', 'new_password2']
         help_texts = {k:"" for k in fields}
+
+class EditZuenios(forms.Form):
+    titulo = forms.CharField(widget= forms.TextInput(attrs={'placeholder': 'Título'}))
+    sueño = forms.CharField(widget= forms.TextInput(attrs={'placeholder': 'Sueño'}))
+    pseudonimo = forms.CharField(widget= forms.TextInput(attrs={'placeholder': 'Pseudonimo'}))
+    fecha = forms.DateField(widget= forms.TextInput(attrs={'placeholder': 'Fecha'}))

@@ -3,19 +3,27 @@
 {% load static %}
 
 {% block contenido %}
-<div align="center">
+<div class=container align="center">
+    <br><br>
     <table class="redTable">
         <thead>
             {%for zuenio in suenios%}
             <tr>
             
-            <th>{{zuenio}} <a class="btn btn-warning">Edit</a> <a href="/familia/delete_suenio/{{zuenio.pseudonimo}}" class="btn btn-danger">Delete</a></th>
+            <th>{{zuenio}} 
+            </th>
+            <th>
+                <ul><a href="/familia/suenio/" class="btn btn-success">Ver sueño</a></ul> <!--mostrar sólo sueño seleccionado--> 
+                <ul><a href="/familia/update_suenio/{{zuenio.pseudonimo}}" class="btn btn-warning">Editar</a></ul> <!--no sirve el botón-->
+                <ul><a href="/familia/delete_suenio/{{zuenio.pseudonimo}}" class="btn btn-danger">Borrar</a></ul>
+            </th>
             
             </tr>
             {% endfor %}
         </thead>
     </table>    
-<a class="btn btn-success" href="/familia/create_suenio">+ Agregar Sueño</a>
+    <br>
+    <a class="btn btn-primary" href="/familia/create_suenio">+ Agregar Sueño</a>
 </div>
 {% endblock %}
 

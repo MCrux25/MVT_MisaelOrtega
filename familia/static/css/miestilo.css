@@ -6,9 +6,9 @@
 
 table.redTable {
     border: 2px solid #A40808;
-    background-color: #EEE7DB;
+    background-color: #ffffff;
     width: 50%;
-    text-align: center;
+    text-align: justify;
     border-collapse: collapse;
   }
   table.redTable td, table.redTable th {
@@ -19,16 +19,16 @@ table.redTable {
     font-size: 13px;
   }
   table.redTable tr:nth-child(even) {
-    background: #F5C8BF;
+    background: #fcfcfc;
   }
   table.redTable thead {
-    background: #A41599;
+    background: #979b8c;
   }
   table.redTable thead th {
     font-size: 19px;
     font-weight: bold;
-    color: #FFFFFF;
-    text-align: center;
+    color: #000000;
+    text-align: justify;
     border-left: 2px solid #A40808;
   }
   table.redTable thead th:first-child {
@@ -38,7 +38,7 @@ table.redTable {
   table.redTable tfoot {
     font-size: 13px;
     font-weight: bold;
-    color: #FFFFFF;
+    color: #000000;
     background: #A40808;
   }
   table.redTable tfoot td {

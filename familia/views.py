@@ -3,23 +3,22 @@ from familia.models import *
 
 from django.contrib.auth.forms import *
 from django.contrib.auth import login, logout, authenticate, update_session_auth_hash
-from .forms import ChangePasswordForm, UserRegisterForm, UserEditForm
-
+from .forms import *
 from django.contrib.auth.decorators import login_required
 
 from django.contrib.auth.models import User
 
 
-@login_required
-def familia (request):
-    integrantes = familiar.objects.all()
-    return render(request, 'familia.html', {'familiar': integrantes})
+# @login_required
+# def familia (request):
+#     integrantes = familiar.objects.all()
+#     return render(request, 'familia.html', {'familiar': integrantes})
 
-def casa(request):
-    return render (request,'jefe.html')
+# def casa(request):
+#     return render (request,'jefe.html')
 
-def mascotas(request):
-    return render (request,'mascotas.html')
+# def mascotas(request):
+#     return render (request,'mascotas.html')
 
 
 # def otra(request):
@@ -32,7 +31,7 @@ def mascotas(request):
 @login_required
 def create_suenio(request):
     if request.method == "POST":
-        zuenio = suenios (suenio = request.POST['suenio'], pseudonimo = request.POST['pseudonimo'], fecha = request.POST['fecha'])
+        zuenio = suenios (titulo = request.POST['titulo'] ,suenio = request.POST['suenio'], pseudonimo = request.POST['pseudonimo'], fecha = request.POST['fecha'])
         zuenio.save()
         zuenio = suenios.objects.all()
         return render (request, "read_suenio.html", {'suenios':zuenio})
@@ -44,10 +43,31 @@ def read_suenio(request):
     return render (request, "read_suenio.html", {'suenios':zuenio})
 
 @login_required
+def suenioView(request):  ##Mostrar sólo sueño seleccionado
+    zuenio = suenios.objects.all()
+    return render(request, 'suenio.html', {'suenios':zuenio})
+
+@login_required
+def update_suenio(request,zuenio_pseudonimo): ##no funciona el botón
+    zuenio = suenios.objects.get(pseudonimo =  zuenio_pseudonimo)
+    if request.method == "POST":
+        form = EditZuenios (request.POST)
+        if form.is_valid():
+            info = form.cleaned_data
+            zuenio.titulo = info ['titulo']
+            zuenio.suenio = info ['sueño']
+            zuenio.pseudonimo = info ['pseudonimo']
+            zuenio.fecha = info ['fecha']
+            zuenio.save()
+        return render(request, "read_suenio.html", {"suenios": zuenio})
+    else:
+        form = EditZuenios (initial = {'titulo': zuenio.titulo,'sueño': zuenio.suenio, 'pseudonimo': zuenio.pseudonimo, 'fecha': zuenio.fecha})
+    return render(request, "update_suenio.html", {"form": form})
+
+@login_required
 def delete_suenio(request, zuenio_pseudonimo):
     zuenio = suenios.objects.get(pseudonimo =  zuenio_pseudonimo)
     zuenio.delete()
-
     zuenio = suenios.objects.all()    
     return render(request, "read_suenio.html", {"suenios": zuenio})
 
@@ -125,8 +145,4 @@ def perfilView(request):
     user_basic_info = User.objects.get(id = usuario.id)
     print(usuario)
     return render(request, 'perfil.html', {'form':user_basic_info})
-
-@login_required
-def perfilView(request):
-    return render(request, 'perfil.html')
 

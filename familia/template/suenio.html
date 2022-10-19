@@ -1,0 +1,17 @@
+{% extends "jefe.html" %}
+{% load static %}
+
+{% block contenido %} 
+    <div style="position: relative; top: 80px">
+        <ul>
+            {%for zuenio in suenios%}
+                <li>Título: {{ zuenio.titulo }}</li>
+                <li>Sueño: {{ zuenio.suenio }}</li>
+                <li>Pseudónimo: {{ zuenio.pseudonimo }}</li>
+                <li>Fecha del sueño: {{ zuenio.fecha }}</li>
+            {% endfor %}
+        </ul>
+        <br>
+        <a class="btn btn-success" style="text-decoration: none; color: rgba(193, 209, 23, 0.907)" href="/familia/read_suenio/">Atrás</a>
+    </div>    
+{% endblock %}

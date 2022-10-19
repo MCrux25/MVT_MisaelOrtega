@@ -3,13 +3,14 @@
 {% load static %}
 
 {% block contenido %}
-<h2 align="center">¿Cómo imaginas otra ciudad?</h2>
+<h2 align="center">Registro de sueños, pa que no los olvides</h2>
 <div class="otro">
     <form method="POST"> {% csrf_token %}
         <div class="pregunta">
-            <input type="text" name="suenio" placeholder="¿Cómo sueñas la ciudad?">
+            <input type="text" name="titulo" placeholder="¿Qué título tendrá tu sueño?">
+            <input type="text" name="suenio" placeholder="Describe lo que recuerdes:">
             <input type="text" name="pseudonimo" placeholder="¿Cómo quieres ser nombrado?">
-            <input type="text" name="fecha" placeholder="¿En qué fecha te gustaría estar?">
+            <input type="text" name="fecha" placeholder="¿Cuándo lo soñaste?">
             <div>
                 <button type="submit" class="centrado">Registrar sueño</button>
             </div>
