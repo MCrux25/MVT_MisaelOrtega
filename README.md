@@ -1,5 +1,6 @@
 # Registro de sueños 
 Aplicación para registrar y compartir tus sueños.
+
 Autor: Misael Ortega Cruz
 
 Actividades realizadas: Se implementó una herencia de plantillas (jefe.html es la plantilla que hereda) para mostrar la barra de navegación en todas las páginas del sitio.
