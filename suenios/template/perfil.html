@@ -8,16 +8,19 @@
         <table class="redTable" text-align="justify">
             <thead>
                 <tr>
+                    <th><img src="{{ user.image.url }}" style="width: 300px; height: auto;"</th> <!-- No muestra la imagen-->
+                </tr>
+                <tr>
                     <th>Nombre de usuario: {{ user.username }}</th>
                 </tr>
                 <tr>
                     <th>Email: {{ user.email }}</th>
                 </tr>
                 <tr>
-                    <th>Nombre: {{ user.first_name }}</th>
+                    <th>Nombre(s): {{ user.first_name }}</th>
                 </tr>
                 <tr>
-                    <th>Apellido: {{ user.last_name }}</th>
+                    <th>Apellido(s): {{ user.last_name }}</th>
                 </tr>
             </thead>
         </table>

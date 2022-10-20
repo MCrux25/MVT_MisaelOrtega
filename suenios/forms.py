@@ -4,25 +4,29 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm, Password
 from django.contrib.auth.models import User
 
 class UserRegisterForm(UserCreationForm):
+    first_name = forms.CharField(label = "Nombre:")
+    last_name = forms.CharField(label = "Apellidos(s):")
     email = forms.EmailField()
     password1 = forms.CharField(label = "Contraseña", widget= forms.PasswordInput)
     password2 = forms.CharField(label = "Repetir contraseña", widget= forms.PasswordInput)
+    image = forms.ImageField(label = "Foto de perfil:") 
 
     class Meta:
         model = User
-        fields = ['username', 'email', 'password1', 'password2']
+        fields = ['username', 'email', 'password1', 'password2', 'first_name','last_name', 'image']
         help_text = {k: "" for k in fields}
 
-class UserEditForm(UserChangeForm):
+class UserEditForm(UserChangeForm): ##No modifica datos de usuario (nombre, apellido y avatar)
     username = forms.CharField(widget= forms.TextInput(attrs={'placeholder': 'username'}))
     email = forms.EmailField(widget= forms.TextInput(attrs={'placeholder': 'email'}))
-    first_name = forms.CharField(widget= forms.TextInput(attrs={'placeholder': 'first_name'}))
-    last_name = forms.CharField(widget= forms.TextInput(attrs={'placeholder': 'last_name'}))
+    first_name = forms.CharField(label = "Nombre:",widget= forms.TextInput(attrs={'placeholder': 'first_name'}))
+    last_name = forms.CharField(label = "Apellido(s):",widget= forms.TextInput(attrs={'placeholder': 'last_name'}))
     password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'password'}))
+    image = forms.ImageField(label = "Foto de perfil:")
 
     class Meta:
         model = User
-        fields = ['username', 'email', 'first_name', 'last_name', 'password']
+        fields = ['username', 'email', 'first_name', 'last_name', 'password', 'image']
         help_text = {k: "" for k in fields}
 
 class ChangePasswordForm(PasswordChangeForm):
