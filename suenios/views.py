@@ -23,12 +23,12 @@ def read_suenio(request):
     return render (request, "read_suenio.html", {'suenios':zuenio})
 
 @login_required
-def suenioView(request):  ##Mostrar sólo sueño seleccionado
-    zuenio = suenios.objects.all()
+def suenioView(request,zuenio_pseudonimo):  
+    zuenio = suenios.objects.get(pseudonimo =  zuenio_pseudonimo)
     return render(request, 'suenio.html', {'suenios':zuenio})
 
 @login_required
-def update_suenio(request,zuenio_pseudonimo): ##no funciona el botón
+def update_suenio(request,zuenio_pseudonimo):
     zuenio = suenios.objects.get(pseudonimo =  zuenio_pseudonimo)
     if request.method == "POST":
         form = EditZuenios (request.POST)
@@ -39,7 +39,7 @@ def update_suenio(request,zuenio_pseudonimo): ##no funciona el botón
             zuenio.pseudonimo = info ['pseudonimo']
             zuenio.fecha = info ['fecha']
             zuenio.save()
-        return render(request, "read_suenio.html", {"suenios": zuenio})
+        return redirect ('/suenios/read_suenio/')
     else:
         form = EditZuenios (initial = {'titulo': zuenio.titulo,'sueño': zuenio.suenio, 'pseudonimo': zuenio.pseudonimo, 'fecha': zuenio.fecha})
     return render(request, "update_suenio.html", {"form": form})
@@ -73,14 +73,11 @@ def login_request(request):
 def registro(request):
     form = UserRegisterForm(request.POST)
     if request.method == "POST":
-        #form = UserCreationForm(request.POST)
         if form.is_valid():
-            #username = form.cleaned_data['username']
             form.save()
             return redirect ("/suenios/login")
         else:
             return render(request, "registro.html",{'form':form})
-    #form = UserCreationForm()
     form = UserRegisterForm()
     return render (request, "registro.html", {'form':form})
 
@@ -108,14 +105,12 @@ def editar_perfil(request):
 def changepass(request):
     usuario = request.user
     if request.method == 'POST':
-        #form = PasswordChangeForm(data = request.POST, user = usuario)
         form = ChangePasswordForm(data = request.POST, user = request.user)
         if form.is_valid():
             user = form.save()
             update_session_auth_hash(request, user)
             return render(request, 'acerca.html')
     else:
-        #form = PasswordChangeForm(request.user)
         form = ChangePasswordForm(user = request.user)
     return render(request, 'changepass.html', {'form': form, 'usuario': usuario})
 
