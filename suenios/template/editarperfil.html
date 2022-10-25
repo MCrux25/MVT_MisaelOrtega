@@ -5,9 +5,9 @@
 {% block title %} Editar datos de usuario {% endblock %}
 
 {%block contenido%}
-
-<h1>Editar perfil</h1>
-<h2>{{ usuario }}</h2>
+<div class="container">
+<h1 align="center">Editar perfil</h1>
+<h2 align="center">{{ user.username }}</h2>
 
 <form method="POST"> {% csrf_token %}
     <table>
@@ -16,5 +16,5 @@
     <input type="submit" value="Editar perfil">
 </form>
 <a href="/suenios/perfil/changepass/">Cambiar contraseña</a>
-
+</div>
 {% endblock %}

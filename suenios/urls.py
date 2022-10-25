@@ -11,7 +11,7 @@ urlpatterns = [
     path('create_suenio/', create_suenio),
     path('update_suenio/<zuenio_pseudonimo>', update_suenio),
     path('delete_suenio/<zuenio_pseudonimo>', delete_suenio),
-    path('suenio/', suenioView),
+    path('suenio/<zuenio_pseudonimo>', suenioView),
     path('login/', login_request),
     path('registro/', registro),
     path('logout/', LogoutView.as_view (template_name = "acerca.html"), name = "Logout"),

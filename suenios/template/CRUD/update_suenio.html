@@ -10,9 +10,13 @@
 
 <div class="otro">
     <form method="POST"> {% csrf_token %}
-        {{ form.as_table }}
-    </form>
+        {{ form.as_p }}
     <button type="submit" class="btn btn-success">Registrar cambios</button>
+    </form>
+    
+</div>
+<div align="center">
+    <a class="btn btn-warning" style="text-decoration: none; color: rgba(0, 0, 0, 0.907)" href="/suenios/read_suenio/">Cancelar y regresar</a>
 </div> 
 
 {% endblock %}
