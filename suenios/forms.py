@@ -1,6 +1,8 @@
+from operator import imod
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordChangeForm
 from django.contrib.auth.models import User
+from .models import *
 
 class UserRegisterForm(UserCreationForm): #no sube foto de perfil, no permite creación de usuarios
     first_name = forms.CharField(label = "Nombre:")

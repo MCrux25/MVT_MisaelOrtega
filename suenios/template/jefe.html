@@ -25,7 +25,7 @@
                         {% endif %}
                         {% with first_image=user.avatar_set.first %}
                             {% if first_image %}
-                            <img src="{{user.image.url}}" style="max-width: 50px" > <!--Sólo muestra imagen del primer avatar, revisar)-->
+                                <img src="{{first_image.image.url}}" style="max-width: 50px" > 
                             {% endif %}
                         {% endwith %}
                         {% if request.user.is_authenticated %}

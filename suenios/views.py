@@ -100,7 +100,6 @@ def editar_perfil(request):
         form = UserEditForm(initial= {'email':usuario.email, 'username': usuario.username, 'first_name': usuario.first_name, 'last_name': usuario.last_name}) 
         return render(request, "editarperfil.html",{'form':form, 'usuario':usuario})
 
-
 @login_required
 def changepass(request):
     usuario = request.user
