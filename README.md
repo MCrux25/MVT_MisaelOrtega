@@ -12,3 +12,4 @@ Funcionalidades
 - Registro de usuarios
 - Registro de sueños (sólo para usuarios registrados)
 - Visualización de sueños registrados (sólo para usuarios registrados)
+- Registro y cambio de foto de perfil
