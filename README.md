@@ -14,7 +14,7 @@ Funcionalidades
 - Visualización de sueños registrados (sólo para usuarios registrados)
 - Registro y cambio de foto de perfil
 
-Enlace al vídeo: https://drive.google.com/file/d/192FoDuGN0DqaIuuZDlx9eq69hEeB3dWU/view?usp=sharing
+Enlace al vídeo: https://youtu.be/vcn7OudUCsg
 
 Usuarios registrados
 
