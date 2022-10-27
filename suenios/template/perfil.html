@@ -8,20 +8,28 @@
         <table class="redTable" text-align="justify">
             <thead>
                 <tr>
+                    {% with first_image=user.avatar_set.first %}
+                        {% if first_image %}
+                <th>        <img src="{{first_image.image.url}}" style="max-width: 350px" > 
+                        {% endif %}
+                    {% endwith %}                  
+                </tr>
+                <tr>
                     <th>Nombre de usuario: {{ user.username }}</th>
                 </tr>
                 <tr>
                     <th>Email: {{ user.email }}</th>
                 </tr>
                 <tr>
-                    <th>Nombre: {{ user.first_name }}</th>
+                    <th>Nombre(s): {{ user.first_name }}</th>
                 </tr>
                 <tr>
-                    <th>Apellido: {{ user.last_name }}</th>
+                    <th>Apellido(s): {{ user.last_name }}</th>
                 </tr>
             </thead>
         </table>
-        <br>    
+        <br>
         <a class="btn btn-success" style="text-decoration: none; color: rgba(193, 209, 23, 0.907)" href="/suenios/perfil/editarPerfil">Editar Perfil</a>
+        <a class="btn btn-warning" style="text-decoration: none; color: rgb(207, 27, 147)" href="/suenios/perfil/changeAvatar">Cambiar imagen de perfil</a>
     </div>    
 {% endblock %}

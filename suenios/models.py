@@ -25,3 +25,6 @@ class Avatar(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     #subcarpeta Avatares de media
     image = models.ImageField(upload_to='avatares', null = True, blank = True)
+
+    def __str__(self):
+        return f' Avatar de: {self.user}'

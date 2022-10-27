@@ -1,0 +1,32 @@
+{% extends "jefe.html" %}
+{% load static %}
+
+{% block title %} Inicio {% endblock %}
+{% block contenido %} 
+<br>
+<h1 style="text-align: center;">Registro de sueños</h1>
+    <div class="container">
+        <p style="text-align: justify;">
+            <br>
+            Hola {{user.username}}, bienvenido a esta página.
+            <br><br>
+            <img src="{% static 'assets/sueños1.JPG'%}" class="estandar" alt="fondo" type="image"><br><br>                        
+        </p>
+    </div>
+    <div class="container">
+        <h2>¿Para qué un registro de sueños?</h2>
+        <br>
+        <br>
+        Quizá tú, como yo, te estás preguntando el porqué de esta página. Bueno, para aclarar esta duda, deberé empezar por el principio. Actualmente, y quizá por el uso de "la mota" mi memoria se ha visto
+        afectada, y ahora ya no recuerdo las cosas como antes. Pero, no sólo es eso, también, en esta modernidad "liquida" (diría Bauman), la memoria y los recuerdos es algo que se valoran cada vez menos, 
+        porque estámos generando recuerdos todo el tiempo y estos se enciman con otros. 
+        <br>
+        <br>
+        Es por eso, que he decidido lanzar esta app que sirva como un registro (diario, si así quieres tomarlo) de los sueños que queremos recordar/compartir. Quizá, nos demos cuenta que lo que soñamos se parece
+        a algo que alguien más ya ha soñado. También, se podrá editar los sueños que alguien más haya registrado, quien sabe, en una de esas quieras "cambiar" algo para hacerlo más divertido.
+        <br>
+        <br>
+        En fin, espero disfrutes esta página y te sea de mucho provecho.
+        </p>
+    </div>
+{% endblock %}

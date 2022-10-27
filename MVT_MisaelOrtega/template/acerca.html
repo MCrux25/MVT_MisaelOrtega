@@ -2,13 +2,15 @@
 
 {% load static %}
 
+{% block title %} Acerca de mí {% endblock %}
+
 {% block contenido %}
 <h1 style="text-align: center;">Homie, aquí unos datos míos</h1>
     <div class="container">
         <h2>Este soy yo</h2>
         <p style="text-align: justify;">
             <br>
-            Hola extraño, soy {{name}}, tengo {{age}} y soy {{zodiac}}.
+            Hola {{user.username}}, soy {{name}}, tengo {{age}} y soy {{zodiac}}.
             <br><br>
             <img src="{% static 'assets/foto2.JPG'%}" class="estandar" alt="fondo" type="image"><br><br>                        
         </p>

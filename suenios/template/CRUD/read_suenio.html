@@ -2,20 +2,20 @@
 
 {% load static %}
 
-{% block title %} {{zuenio.suenio}} {% endblock %}
+{% block title %} Muro de sueños {% endblock %}
 
 {% block contenido %}
 <div class=container align="center">
     <br><br>
     <table class="redTable">
         <thead>
-            {%for zuenio in suenios%}
+            {% for zuenio in suenios %}
             <tr>
             
-            <th>{{zuenio}} 
+            <th>{{ zuenio }} 
             </th>
             <th>
-                <ul><a href="/suenios/suenio/" class="btn btn-success">Ver sueño</a></ul> <!--mostrar sólo sueño seleccionado--> 
+                <ul><a href="/suenios/suenio/{{zuenio.pseudonimo}}" class="btn btn-success">Ver sueño</a></ul> <!--mostrar sólo sueño seleccionado--> 
                 <ul><a href="/suenios/update_suenio/{{zuenio.pseudonimo}}" class="btn btn-warning">Editar</a></ul> <!--no sirve el botón-->
                 <ul><a href="/suenios/delete_suenio/{{zuenio.pseudonimo}}" class="btn btn-danger">Borrar</a></ul>
             </th>

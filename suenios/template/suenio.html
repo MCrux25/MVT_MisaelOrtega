@@ -1,19 +1,19 @@
 {% extends "jefe.html" %}
 {% load static %}
 
-{% block title %} {{ zuenio.suenio }} {% endblock %}
+{% block title %} Sueño de {% endblock %}
 
 {% block contenido %} 
     <div style="position: relative; top: 80px">
-        <ul>
-            {%for zuenio in suenios%}
-                <li>Título: {{ zuenio.titulo }}</li>
-                <li>Sueño: {{ zuenio.suenio }}</li>
-                <li>Pseudónimo: {{ zuenio.pseudonimo }}</li>
-                <li>Fecha del sueño: {{ zuenio.fecha }}</li>
-            {% endfor %}
-        </ul>
-        <br>
-        <a class="btn btn-success" style="text-decoration: none; color: rgba(193, 209, 23, 0.907)" href="/suenios/read_suenio/">Atrás</a>
+        <div class="container">
+            <ul>
+                    <li>Título: {{ suenios.titulo }}</li>
+                    <li>Sueño: {{ suenios.suenio }}</li>
+                    <li>Pseudónimo: {{ suenios.pseudonimo }}</li>
+                    <li>Fecha del sueño: {{ suenios.fecha }}</li>
+            </ul>
+            <br>
+            <a class="btn btn-success" style="text-decoration: none; color: rgba(193, 209, 23, 0.907)" href="/suenios/read_suenio/">Atrás</a>
+        </div>
     </div>    
 {% endblock %}
