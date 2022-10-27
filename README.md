@@ -15,3 +15,19 @@ Funcionalidades
 - Registro y cambio de foto de perfil
 
 Enlace al vídeo: https://drive.google.com/file/d/192FoDuGN0DqaIuuZDlx9eq69hEeB3dWU/view?usp=sharing
+
+Usuarios registrados
+
+Admin
+
+user: misaldazo
+pass: 123456
+
+No admin
+
+user: Lalito
+pass: 12kl36lñ
+
+user: Jamon
+pass: probando123
+
