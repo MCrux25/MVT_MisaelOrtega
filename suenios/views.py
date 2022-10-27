@@ -93,12 +93,22 @@ def editar_perfil(request):
             user_basic_info.first_name = form.cleaned_data.get('first_name')
             user_basic_info.last_name = form.cleaned_data.get('last_name')
             user_basic_info.save()
-            return render (request, "acerca.html")
+            avatar = Avatar.objects.filter(user = request.user.id)
+            try:
+                avatar = avatar[0].image.url
+            except:
+                avatar = None
+            return render(request, 'acerca.html', {'avatar': avatar})
         else:
-            return render(request, "acerca.html",{'form':form})
+            avatar = Avatar.objects.filter(user = request.user.id)
+            try:
+                avatar = avatar[0].image.url
+            except:
+                avatar = None
+            return render(request, 'acerca.html', {'form':form, 'avatar': avatar})
     else:
-        form = UserEditForm(initial= {'email':usuario.email, 'username': usuario.username, 'first_name': usuario.first_name, 'last_name': usuario.last_name}) 
-        return render(request, "editarperfil.html",{'form':form, 'usuario':usuario})
+        form = UserEditForm(initial={'email': usuario.email, 'username': usuario.username, 'first_name': usuario.first_name, 'last_name': usuario.last_name })
+    return render(request, 'editarPerfil.html', {'form': form, 'usuario': usuario})
 
 @login_required
 def changepass(request):
@@ -119,4 +129,28 @@ def perfilView(request):
     user_basic_info = User.objects.get(id = usuario.id)
     print(usuario)
     return render(request, 'perfil.html', {'form':user_basic_info})
+
+@login_required
+def AgregarAvatar(request):
+    if request.method == 'POST':
+        form = AvatarFormulario(request.POST, request.FILES)
+        print(form)
+        print(form.is_valid())
+        if form.is_valid():
+            user = User.objects.get(username = request.user)
+            avatar = Avatar(user = user, image = form.cleaned_data['avatar'], id = request.user.id)
+            avatar.save()
+            avatar = Avatar.objects.filter(user = request.user.id)
+            try:
+                avatar = avatar[0].image.url
+            except:
+                avatar = None           
+            return render(request, 'acerca.html', {'avatar': avatar})
+    else:
+        try:
+            avatar = Avatar.objects.filter(user = request.user.id)
+            form = AvatarFormulario()
+        except:
+            form = AvatarFormulario()
+    return render(request, 'AgregarAvatar.html', {'form': form})
 

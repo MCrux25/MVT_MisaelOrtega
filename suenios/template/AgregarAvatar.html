@@ -1,0 +1,13 @@
+{% extends "jefe.html" %}
+{%load static%} 
+
+{%block contenido%}
+
+{% block title %} Agregar Avatar {% endblock %}
+
+<form action="" method="POST" enctype="multipart/form-data"> {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Aceptar">
+</form>
+
+{% endblock %}

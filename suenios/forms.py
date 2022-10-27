@@ -45,3 +45,6 @@ class EditZuenios(forms.Form):
     sueño = forms.CharField(widget= forms.TextInput(attrs={'placeholder': 'Sueño'}))
     pseudonimo = forms.CharField(widget= forms.TextInput(attrs={'placeholder': 'Pseudonimo'}))
     fecha = forms.DateField(widget= forms.TextInput(attrs={'placeholder': 'Fecha'}))
+
+class AvatarFormulario(forms.Form):
+    avatar = forms.ImageField()
