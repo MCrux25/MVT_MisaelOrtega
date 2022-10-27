@@ -8,6 +8,10 @@ from django.contrib.auth.decorators import login_required
 
 from django.contrib.auth.models import User
 
+def aboutme(request):
+    data = {'name': 'Julia', 'age': '28', 'zodiac':'piscis'}
+    return render (request, "acerca.html", data)
+
 @login_required
 def create_suenio(request):
     if request.method == "POST":
@@ -62,7 +66,7 @@ def login_request(request):
 
             if user is not None:
                 login(request,user)
-                return render (request, "acerca.html")
+                return render (request, "inicio.html")
             else:
                 return render (request, "login.html", {'form':form})
         else:
@@ -98,14 +102,14 @@ def editar_perfil(request):
                 avatar = avatar[0].image.url
             except:
                 avatar = None
-            return render(request, 'acerca.html', {'avatar': avatar})
+            return render(request, 'perfil.html', {'avatar': avatar})
         else:
             avatar = Avatar.objects.filter(user = request.user.id)
             try:
                 avatar = avatar[0].image.url
             except:
                 avatar = None
-            return render(request, 'acerca.html', {'form':form, 'avatar': avatar})
+            return render(request, 'perfil.html', {'form':form, 'avatar': avatar})
     else:
         form = UserEditForm(initial={'email': usuario.email, 'username': usuario.username, 'first_name': usuario.first_name, 'last_name': usuario.last_name })
     return render(request, 'editarPerfil.html', {'form': form, 'usuario': usuario})
@@ -118,7 +122,7 @@ def changepass(request):
         if form.is_valid():
             user = form.save()
             update_session_auth_hash(request, user)
-            return render(request, 'acerca.html')
+            return render(request, 'inicio.html')
     else:
         form = ChangePasswordForm(user = request.user)
     return render(request, 'changepass.html', {'form': form, 'usuario': usuario})
@@ -145,7 +149,7 @@ def AgregarAvatar(request):
                 avatar = avatar[0].image.url
             except:
                 avatar = None           
-            return render(request, 'acerca.html', {'avatar': avatar})
+            return render(request, 'perfil.html', {'avatar': avatar})
     else:
         try:
             avatar = Avatar.objects.filter(user = request.user.id)
