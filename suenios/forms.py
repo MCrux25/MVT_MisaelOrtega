@@ -42,7 +42,7 @@ class ChangePasswordForm(PasswordChangeForm):
 
 class EditZuenios(forms.Form):
     titulo = forms.CharField(widget= forms.TextInput(attrs={'placeholder': 'Título'}))
-    sueño = forms.CharField(widget= forms.TextInput(attrs={'placeholder': 'Sueño'}))
+    sueño = forms.CharField(widget= forms.Textarea(attrs={'placeholder': 'Sueño',"rows":5}))
     pseudonimo = forms.CharField(widget= forms.TextInput(attrs={'placeholder': 'Pseudonimo'}))
     fecha = forms.DateField(widget= forms.TextInput(attrs={'placeholder': 'Fecha'}))
 
