@@ -19,5 +19,5 @@ urlpatterns = [
     path('perfil/editarPerfil/', editar_perfil),
     path('perfil/changepass/', changepass),
     path('perfil/changeAvatar/', AgregarAvatar),
-    path(r'about/', aboutme),
+    path('about/', aboutme),
 ]
