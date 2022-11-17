@@ -120,15 +120,20 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-import os 
-STATICFILES_DIRS = [os.path.join (BASE_DIR, 'MVT_MisaelOrtega/static'),os.path.join (BASE_DIR, 'suenios/static')]
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_URL = "/suenios/login"
+import os
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
+STATICFILES_DIRS = [os.path.join (BASE_DIR, 'MVT_MisaelOrtega/static'),os.path.join (BASE_DIR, 'suenios/static')]
+
