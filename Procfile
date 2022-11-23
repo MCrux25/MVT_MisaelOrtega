@@ -1,0 +1,1 @@
+web: gunicorn MVT_MisaelOrtega.wsgi
